@@ -1,18 +1,18 @@
-<x-layouts.app>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <title>{{ $title ?? 'Inventaris Lab Elektronik' }}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inventaris Lab Elektronik</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    @fluxStyles {{-- <=== Tambahkan ini untuk CSS Flux --}}
 </head>
-<body>
-    <div class="container">
-        @yield('content')
+<body class="bg-gray-100 text-gray-800">
+
+    <div class="min-h-screen">
+        {{ $slot }}
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    @fluxScripts {{-- <=== Tambahkan ini untuk JS Flux --}}
 </body>
 </html>
-</x-layouts.app>
