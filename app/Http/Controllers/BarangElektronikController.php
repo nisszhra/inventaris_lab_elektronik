@@ -7,11 +7,22 @@ use Illuminate\Http\Request;
 
 class BarangElektronikController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $barang = BarangElektronik::paginate(10);
+        $query = BarangElektronik::query();
+
+        if ($request->has('search') && $request->search != '') {
+            $search = $request->search;
+            $query->where(function ($q) use ($search) {
+                $q->where('nama_barang', 'like', "%$search%")
+                    ->orWhere('kode_barang', 'like', "%$search%");
+            });
+        }
+
+        $barang = $query->paginate(10)->withQueryString();
         return view('barang.index', compact('barang'));
     }
+
 
     public function create()
     {

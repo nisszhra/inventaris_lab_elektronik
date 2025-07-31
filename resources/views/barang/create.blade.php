@@ -55,6 +55,6 @@
 
         <flux:textarea label="Keterangan" name="keterangan" class="mb-3">{{ old('keterangan') }}</flux:textarea>
 
-        <flux:button type="submit" variant="primary">Simpan</flux:button>
+        <flux:button type="submit" class="mt-3" variant="primary">Simpan</flux:button>
     </form>
 </x-layouts.app>

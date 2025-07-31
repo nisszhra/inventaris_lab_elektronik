@@ -20,7 +20,7 @@
 
         <form action="{{ route('barang.index') }}" method="GET" class="flex gap-2">
             <flux:input name="search" placeholder="Cari nama/kode" value="{{ request('search') }}" />
-            <flux:button>Cari</flux:button>
+            <flux:button type="submit">Cari</flux:button>
         </form>
     </div>
 
